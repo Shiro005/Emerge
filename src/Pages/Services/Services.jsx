@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
   const navigate = useNavigate();
@@ -81,171 +82,179 @@ const Services = () => {
   };
 
   return (
-    <div className="relative bg-white min-h-screen w-full overflow-x-hidden" id="services">
-      {/* Header Section */}
-      <div className="container mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-12 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto"
-        >
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-stone-500"
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            Our Services
-          </motion.h2>
-
+    <>
+      <Helmet>
+        <title>Construction Services in Akola | Emerge Construction</title>
+        <meta name="description" content="Comprehensive construction services in Akola including residential buildings, commercial complexes, renovations, and civil works by Emerge Construction." />
+        <meta name="keywords" content="construction services akola, building services akola, civil contractors akola" />
+        <link rel="canonical" href="https://emergeconstruction.in/services" />
+      </Helmet>
+      <div className="relative bg-white min-h-screen w-full overflow-x-hidden" id="services">
+        {/* Header Section */}
+        <div className="container mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-12 text-center">
           <motion.div
-            className="w-20 h-1 bg-gradient-to-r from-stone-400 to-stone-600 mb-8 mx-auto"
-            initial={{ width: 0 }}
-            animate={{ width: 80 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          />
-
-          <motion.p
-            className="text-lg md:text-xl text-gray-600"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
           >
-            From initial concept to final construction, we offer a complete range of architectural and design services
-            to bring your vision to life with precision and excellence.
-          </motion.p>
-        </motion.div>
-      </div>
-
-      {/* Services Grid Section */}
-      <div className="container mx-auto px-4 md:px-8 py-8">
-        <motion.div
-          className="relative"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          {/* Gradient fade effects on sides */}
-          {/* <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" /> */}
-          {/* <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" /> */}
-
-          {/* Scrollable cards container */}
-          <div className="overflow-x-auto pb-8 -mx-4 px-4 scrollbar-hide">
-            <div className="flex gap-6 pb-4" style={{ minWidth: `${servicesData.length * 320}px` }}>
-              {servicesData.map((service, index) => (
-                <div key={index} className="flex-shrink-0 w-72">
-                  <ServiceCard
-                    service={service}
-                    index={index}
-                    onClick={() => openServiceDetails(service)}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Service Detail Modal */}
-      <AnimatePresence>
-        {selectedService && (
-          <motion.div
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={closeServiceDetails}
-          >
-            <motion.div
-              className="bg-white rounded-xl overflow-hidden shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", bounce: 0.3 }}
-              onClick={(e) => e.stopPropagation()}
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-stone-500"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
             >
-              <div className="relative h-64 md:h-80 overflow-hidden">
-                <motion.img
-                  src={selectedService.image}
-                  alt={selectedService.title}
-                  className="w-full h-full object-cover"
-                  initial={{ scale: 1.1 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.8 }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6">
-                  <motion.h3
-                    className="text-3xl font-bold text-white"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.3 }}
+              Our Services
+            </motion.h2>
+
+            <motion.div
+              className="w-20 h-1 bg-gradient-to-r from-stone-400 to-stone-600 mb-8 mx-auto"
+              initial={{ width: 0 }}
+              animate={{ width: 80 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            />
+
+            <motion.p
+              className="text-lg md:text-xl text-gray-600"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              From initial concept to final construction, we offer a complete range of architectural and design services
+              to bring your vision to life with precision and excellence.
+            </motion.p>
+          </motion.div>
+        </div>
+
+        {/* Services Grid Section */}
+        <div className="container mx-auto px-4 md:px-8 py-8">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            {/* Gradient fade effects on sides */}
+            {/* <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" /> */}
+            {/* <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" /> */}
+
+            {/* Scrollable cards container */}
+            <div className="overflow-x-auto pb-8 -mx-4 px-4 scrollbar-hide">
+              <div className="flex gap-6 pb-4" style={{ minWidth: `${servicesData.length * 320}px` }}>
+                {servicesData.map((service, index) => (
+                  <div key={index} className="flex-shrink-0 w-72">
+                    <ServiceCard
+                      service={service}
+                      index={index}
+                      onClick={() => openServiceDetails(service)}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Service Detail Modal */}
+        <AnimatePresence>
+          {selectedService && (
+            <motion.div
+              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeServiceDetails}
+            >
+              <motion.div
+                className="bg-white rounded-xl overflow-hidden shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ type: "spring", bounce: 0.3 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="relative h-64 md:h-80 overflow-hidden">
+                  <motion.img
+                    src={selectedService.image}
+                    alt={selectedService.title}
+                    className="w-full h-full object-cover"
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.8 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-6">
+                    <motion.h3
+                      className="text-3xl font-bold text-white"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      {selectedService.title}
+                    </motion.h3>
+                    <motion.p
+                      className="text-white/90 mt-1"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      {selectedService.description}
+                    </motion.p>
+                  </div>
+                  <motion.div
+                    className="absolute top-4 right-4 w-12 h-12 flex items-center justify-center bg-white/90 rounded-full text-2xl"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.5 }}
                   >
-                    {selectedService.title}
-                  </motion.h3>
+                    {selectedService.icon}
+                  </motion.div>
+                </div>
+
+                <div className="p-6 md:p-8 overflow-y-auto flex-grow">
                   <motion.p
-                    className="text-white/90 mt-1"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.4 }}
+                    className="text-gray-700 mb-8 text-lg leading-relaxed"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.6 }}
                   >
-                    {selectedService.description}
+                    {selectedService.longDescription}
                   </motion.p>
                 </div>
-                <motion.div
-                  className="absolute top-4 right-4 w-12 h-12 flex items-center justify-center bg-white/90 rounded-full text-2xl"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  {selectedService.icon}
-                </motion.div>
-              </div>
 
-              <div className="p-6 md:p-8 overflow-y-auto flex-grow">
-                <motion.p
-                  className="text-gray-700 mb-8 text-lg leading-relaxed"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.6 }}
-                >
-                  {selectedService.longDescription}
-                </motion.p>
-              </div>
-
-              <div className="p-6 border-t border-gray-200">
-                <div className="flex gap-4">
-                  <motion.button
-                    className="flex-1 py-3 px-4 bg-stone-100 hover:bg-stone-200 rounded-lg font-medium text-stone-800 transition-colors"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={closeServiceDetails}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.7 }}
-                  >
-                    Close
-                  </motion.button>
-                  <motion.button
-                    className="flex-1 py-3 px-4 bg-gradient-to-r from-stone-600 to-stone-800 hover:from-stone-700 hover:to-stone-900 rounded-lg font-medium text-white transition-colors"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={goToContact}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.7 }}
-                  >
-                    Contact Us
-                  </motion.button>
+                <div className="p-6 border-t border-gray-200">
+                  <div className="flex gap-4">
+                    <motion.button
+                      className="flex-1 py-3 px-4 bg-stone-100 hover:bg-stone-200 rounded-lg font-medium text-stone-800 transition-colors"
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={closeServiceDetails}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.7 }}
+                    >
+                      Close
+                    </motion.button>
+                    <motion.button
+                      className="flex-1 py-3 px-4 bg-gradient-to-r from-stone-600 to-stone-800 hover:from-stone-700 hover:to-stone-900 rounded-lg font-medium text-white transition-colors"
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={goToContact}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.7 }}
+                    >
+                      Contact Us
+                    </motion.button>
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+          )}
+        </AnimatePresence>
+      </div>
+    </>
   );
 };
 
