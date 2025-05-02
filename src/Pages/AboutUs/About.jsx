@@ -51,7 +51,7 @@ function About() {
             fullBio: "Bhushan specializes in sustainable construction practices and eco-friendly design. His innovative approach to civil engineering has earned our company multiple green building certifications and industry recognition.",
             quote: "The best engineering solutions work with nature, not against it—balancing progress with preservation.",
             stats: [
-                { value: "5+", label: "Years Exp." },
+                { value: "5+", label: "Years Exp" },
                 { value: "B.E", label: "Civil" },
                 { value: "5+", label: "Awards" }
             ]

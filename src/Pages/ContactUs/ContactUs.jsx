@@ -168,7 +168,7 @@ const ContactForm = () => {
       "mainEntity": {
         "@type": "Organization",
         "name": "Emerge Construction",
-        "telephone": "+918698165330",
+        "telephone": "+91 8698165330",
         "email": "info@emergeconstruction.in",
         "address": {
           "@type": "PostalAddress",
