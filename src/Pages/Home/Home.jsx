@@ -14,7 +14,7 @@ const services = [
   {
     name: "Planning",
     href: "/services/planning",
-    image: "https://i.pinimg.com/1200x/74/54/04/745404d12e92abd7c73cfaac6e25d915.jpg",
+    image: "https://images.pexels.com/photos/5582867/pexels-photo-5582867.jpeg",
     description: "Strategic planning to bring your vision to life with precision and efficiency."
   },
   {
@@ -32,7 +32,7 @@ const services = [
   {
     name: "3D Modeling",
     href: "/services/3dmodeling",
-    image: "https://img.freepik.com/free-photo/view-3d-house-model_23-2150761166.jpg?t=st=1744894707~exp=1744898307~hmac=cd83b8e9c868b1338cebb026bc3b93d8d6bf463d0b8698c111ffe3087258368d&w=826",
+    image: "https://images.pexels.com/photos/12713156/pexels-photo-12713156.jpeg",
     description: "Realistic 3D visualizations to preview your dream project before construction."
   },
   {
